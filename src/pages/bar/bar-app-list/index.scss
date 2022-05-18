@@ -1,0 +1,26 @@
+.bar-app-list-container {
+  margin-left: 5px;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+}
+
+.bar-app-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 999px;
+}
+
+.bar-app-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  color: #9c9c9c;
+  background-color: antiquewhite;
+  border-radius: 50%;
+}
