@@ -9,8 +9,6 @@ import useOutsideClick from '@cobalt/react-outside-click-hook';
 import NavBar from './pages/nav-bar';
 import AppletsModal from './pages/applets-modal';
 import StoreModal from './pages/store-modal';
-import PhoneModal from './pages/phone-modal';
-import ChatModal from './pages/chat-modal';
 
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { changeCurPage } from './slices/global/globalSlice';
@@ -23,17 +21,13 @@ function App() {
   const { curPage } = useAppSelector((state) => state.global);
   
 
-  const [appletsBtnNode, setAppletsBtnNode] = useState<HTMLButtonElement | null>(null);
+  const [navBarNode, setNavBarNode] = useState<HTMLButtonElement | null>(null);
   const [appletsModalNode, setAppletsModalNode] = useState<HTMLDivElement | null>(null);
   const [storeModalNode, setStoreModalNode] = useState<HTMLDivElement | null>(null);
-  const [phoneModalNode, setPhoneModalNode] = useState<HTMLDivElement | null>(null);
-  const [chatModalNode, setChatModalNode] = useState<HTMLDivElement | null>(null);
 
-  const appletsBtnRef = useCallback((n: HTMLButtonElement) => setAppletsBtnNode(n), []);
+  const navBarRef = useCallback((n: HTMLButtonElement) => setNavBarNode(n), []);
   const appletsModalRef = useCallback((n: HTMLDivElement) => setAppletsModalNode(n), []);
   const storeModalRef = useCallback((n: HTMLDivElement) => setStoreModalNode(n), []);
-  const phoneModalRef = useCallback((n: HTMLDivElement) => setPhoneModalNode(n), []);
-  const chatModalRef = useCallback((n: HTMLDivElement) => setChatModalNode(n), []);
   
   const outsideClickHandler = useCallback(() => {
     dispatch(changeCurPage('none'));
@@ -41,7 +35,7 @@ function App() {
 
   useOutsideClick({
     handler: outsideClickHandler,
-    refs: [appletsBtnNode, appletsModalNode, storeModalNode, phoneModalNode, chatModalNode],
+    refs: [navBarNode, appletsModalNode, storeModalNode],
     shouldExecute: true,
   });
   
@@ -49,15 +43,11 @@ function App() {
     <ThemeProvider style={styles} loader={() => Promise.resolve(Theme)}>
       <ViewportProvider>
         <PortalProvider>
-          <NavBar appletsBtnRef={appletsBtnRef} />
+          <NavBar forwardedRef={navBarRef} />
 
           {curPage === 'applets-modal' && <AppletsModal forwardedRef={appletsModalRef} />}
 
           {curPage === 'store-modal' && <StoreModal forwardedRef={storeModalRef} />}
-
-          {curPage === 'call-modal' && <PhoneModal />}
-
-          {curPage === 'chat-modal' && <ChatModal />}
         </PortalProvider>
       </ViewportProvider>
     </ThemeProvider>

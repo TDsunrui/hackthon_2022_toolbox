@@ -10,7 +10,7 @@ import imgSrc2 from '../../assets/images/popup_2.png';
 import imgSrc3 from '../../assets/images/popup_3.png';
 import imgSrc4 from '../../assets/images/popup_4.png';
 
-export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'call-modal' | 'chat-modal';
+export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal';
 
 export type AppType = {
   id: string;
