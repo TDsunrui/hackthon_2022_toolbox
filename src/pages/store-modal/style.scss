@@ -1,0 +1,53 @@
+.store-item-left {
+  position: relative;
+  flex: 1;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #fafafa;
+
+    .store-item-left-popup {
+      display: flex;
+    }
+  }
+
+  .store-item-left-popup {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: -50px;
+    z-index: 9;
+  }
+}
+
+.store-item-right-btn {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &.uninstalled {
+    &:hover {
+      color: #fff;
+      background-color: #005CDE;
+    }
+  }
+
+  &.uninstalled_loading, &.installed_loading {
+    &:hover {
+      background-color: #fff;
+    }
+  }
+
+  &.installed {
+    &:hover {
+      color: #fff;
+      background-color: #8635F2;
+    }
+  }
+
+  &.uninstalled_ok, &.installed_ok {
+    color: #fff;
+    background-color: #005CDE;
+  }
+}

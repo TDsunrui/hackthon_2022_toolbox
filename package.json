@@ -9,7 +9,34 @@
     "eject": "craco eject"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
+    "@cobalt-marketplace/react-tooltip": "^1.1.0",
+    "@cobalt/react-box": "^1.2.8",
+    "@cobalt/react-button": "^1.5.0",
+    "@cobalt/react-card": "^1.1.8",
+    "@cobalt/react-divider": "^1.1.8",
+    "@cobalt/react-flag": "^1.1.2",
+    "@cobalt/react-flex": "^1.4.8",
+    "@cobalt/react-icon": "^1.26.0",
+    "@cobalt/react-image": "^1.1.6",
+    "@cobalt/react-input": "^1.3.9",
+    "@cobalt/react-label": "^1.1.10",
+    "@cobalt/react-link": "^1.1.8",
+    "@cobalt/react-list": "^1.1.8",
+    "@cobalt/react-message": "^1.1.8",
+    "@cobalt/react-outside-click-hook": "^2.0.1",
+    "@cobalt/react-panel": "^1.2.1",
+    "@cobalt/react-popup": "^1.3.8",
+    "@cobalt/react-portal-provider": "^1.1.1",
+    "@cobalt/react-position-hook": "^2.1.5",
+    "@cobalt/react-required": "^1.1.9",
+    "@cobalt/react-spinner": "^1.1.8",
+    "@cobalt/react-tab": "^1.1.10",
+    "@cobalt/react-tag": "^1.4.1",
+    "@cobalt/react-textarea": "^1.3.7",
+    "@cobalt/react-theme-provider": "^2.1.7",
+    "@cobalt/react-typography": "^1.5.1",
+    "@cobalt/react-viewport-provider": "^1.2.2",
+    "@cobalt/theme-experimental": "^1.0.0-pre.565090f",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -18,7 +45,6 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "antd": "^4.20.0",
     "react": "^18.0.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-dnd": "^16.0.1",
@@ -50,5 +76,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "./"
 }
