@@ -60,7 +60,7 @@ function StoreModal({ forwardedRef }: StoreModalProps) {
     >
       {/* Header */}
       <Flex alignY="center" paddingTop="5" paddingBottom="3">
-        {/* Close button */}
+        {/* Back button */}
         <Box paddingX="2">
           <Button
             shape="compact"

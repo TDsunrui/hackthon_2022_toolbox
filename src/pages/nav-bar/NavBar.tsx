@@ -27,6 +27,9 @@ function NavBar(props: ShortcurButtonsProps) {
   const installedAppList = useInstalledAppList();
 
   const handleClickInstalledAppBtn = (page: PageType) => {
+    if (curPage === page) {
+      return dispatch(changeCurPage('none'));
+    }
     dispatch(changeCurPage(page));
   };
   
@@ -54,7 +57,7 @@ function NavBar(props: ShortcurButtonsProps) {
             
             {curPage === 'phone-modal' && <PhoneModal app={app} />}
 
-            {curPage === 'chat-modal' && <ChatModal />}
+            {curPage === 'chat-modal' && <ChatModal app={app} />}
           </Box>
         ))}
       </Flex>

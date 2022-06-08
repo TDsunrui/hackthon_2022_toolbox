@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@cobalt-marketplace/react-tooltip": "^1.1.0",
+    "@cobalt/react-avatar": "^1.2.12",
     "@cobalt/react-box": "^1.2.8",
     "@cobalt/react-button": "^1.5.0",
     "@cobalt/react-card": "^1.1.8",

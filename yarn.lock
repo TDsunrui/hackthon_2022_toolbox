@@ -1074,6 +1074,11 @@
   resolved "https://hub.talkdeskapp.com:8443/repository/talkdesk-npm/@cobalt-marketplace/react-tooltip/-/react-tooltip-1.1.0.tgz#12996e1ac7746c95ef5395e47d790fa082858a24"
   integrity sha512-63iCEmMnRRnL9/sI2kpYQYj5ZsHnHJrQtzq0WCzw4WD41U3ibWVZEdHBwrvobFW+JBzvF2eO57eu+akW+Wi3YA==
 
+"@cobalt/css-avatar@^1.2.2":
+  version "1.2.2"
+  resolved "https://nexus.cap.sh:8443/repository/talkdesk-npm/@cobalt/css-avatar/-/css-avatar-1.2.2.tgz#cf46b8c70a965bf75e611abb59a2ae4924f806ad"
+  integrity sha512-Oh0NVzRpuWCbZxwDNyUmzoGmbu8Y1NkLiYK75TDTWS7dRkEEfcks65nubH4Iy+8/B6z11UFrFYVmKQXGRRjQ/Q==
+
 "@cobalt/css-box@^1.1.3":
   version "1.1.3"
   resolved "https://hub.talkdeskapp.com:8443/repository/talkdesk-npm/@cobalt/css-box/-/css-box-1.1.3.tgz#9a5c98ca257d4f4ae1b1bae0224a1e8a4cd7bd5e"
@@ -1198,6 +1203,14 @@
   version "1.5.1"
   resolved "https://hub.talkdeskapp.com:8443/repository/talkdesk-npm/@cobalt/css-typography/-/css-typography-1.5.1.tgz#24b23bda48b2739e87f6768c1d0d6d5db492b233"
   integrity sha512-q1pcSQbaMbCtq6Xy0wpZYUhoOysIJann4Y9yafG1FdXd2VVO6xYhhRkq9ZxbnwUrsRc/3QQG3UhHGm+oSJ/+dg==
+
+"@cobalt/react-avatar@^1.2.12":
+  version "1.2.12"
+  resolved "https://nexus.cap.sh:8443/repository/talkdesk-npm/@cobalt/react-avatar/-/react-avatar-1.2.12.tgz#2befca02a3f62aa46d22a57a0a6148789ec555f0"
+  integrity sha512-QRqPlSzmp0AOnx7ipMIf2+XZuw3LbtYi6pWa1aIPAS6iPVBRFQG5k92ubWB53csnpwkQcnl5vB9APB6E/ms99w==
+  dependencies:
+    "@cobalt/css-avatar" "^1.2.2"
+    classcat "^4.0.2"
 
 "@cobalt/react-box@^1.2.8":
   version "1.2.8"
