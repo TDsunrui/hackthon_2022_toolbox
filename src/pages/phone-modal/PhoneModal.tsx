@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Popup from "@cobalt/react-popup";
 import Flex from "@cobalt/react-flex";
 import Box from "@cobalt/react-box";
@@ -5,19 +7,26 @@ import Icon from "@cobalt/react-icon";
 import { Text } from "@cobalt/react-typography";
 import Button from "@cobalt/react-button";
 
-import PhoneNumberPage from "./PhoneNumberPage";
+import PhoneNumber from "./PhoneNumber";
+import PhoneCalling from "./PhoneCalling";
 
 import { useAppDispatch } from "@/app/hooks";
 import { AppType, changeCurPage } from "@/slices/global/globalSlice";
 
 import './style.scss';
 
-export interface PhoneModelType {
+export interface PhoneModelProps {
   app: AppType;
 }
 
-function PhoneModal({ app }: PhoneModelType) {
+function PhoneModal({ app }: PhoneModelProps) {
   const dispatch = useAppDispatch();
+
+  const [curPage, setCurPage] = useState<'phoneNumber' | 'phoneCalling'>('phoneNumber');
+
+  const handleCall = () => setCurPage('phoneCalling');
+
+  const handleEndCall = () => setCurPage('phoneNumber');
   
   return (
     <Popup
@@ -50,7 +59,9 @@ function PhoneModal({ app }: PhoneModelType) {
           </Box>
         </Flex>
 
-        <PhoneNumberPage app={app} />
+        {curPage === 'phoneNumber' && <PhoneNumber app={app} onCall={handleCall} />}
+
+        {curPage === 'phoneCalling' && <PhoneCalling onEndCall={handleEndCall} />}
       </Box>
     </Popup>
   );

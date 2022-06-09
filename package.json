@@ -20,6 +20,7 @@
     "@cobalt/react-icon": "^1.26.0",
     "@cobalt/react-image": "^1.1.6",
     "@cobalt/react-input": "^1.3.9",
+    "@cobalt/react-input-group": "^1.3.7",
     "@cobalt/react-label": "^1.1.10",
     "@cobalt/react-link": "^1.1.8",
     "@cobalt/react-list": "^1.1.8",

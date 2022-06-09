@@ -1134,6 +1134,11 @@
   resolved "https://hub.talkdeskapp.com:8443/repository/talkdesk-npm/@cobalt/css-image/-/css-image-1.0.8.tgz#b74af42f654be2c93ad12e0471654bb694df5d95"
   integrity sha512-BWWvFkTFNOgb/l9pqfon3FnMVQ9bAzm+1EtQwxLabVEPYzw9q81cfSEeLcySHoKMaE7ioJlndgD3CJnWzeiEdQ==
 
+"@cobalt/css-input-group@^1.2.5":
+  version "1.2.5"
+  resolved "https://nexus.cap.sh:8443/repository/talkdesk-npm/@cobalt/css-input-group/-/css-input-group-1.2.5.tgz#0eb1d5e2814cf15f1cfea8613cbf40e1a8592093"
+  integrity sha512-llyFoOO0ufXB3lt67jXuG4Kagc9O4MVJg6MuAqoCiGaCsWDZSpG9RiDOkGY6NpOxtRuhymnSQwlmt0G1/sk9nA==
+
 "@cobalt/css-input@^1.4.1":
   version "1.4.1"
   resolved "https://hub.talkdeskapp.com:8443/repository/talkdesk-npm/@cobalt/css-input/-/css-input-1.4.1.tgz#c03e3aa6c7b793eb719a5f9dd87cb65ff5012dba"
@@ -1276,6 +1281,14 @@
   integrity sha512-NS2mCkG5nPbBL/dqhxwDRKKMcZPl95twOqW7gbJUBNWG+EJFpirtkUaLmwcv6sn9NxwyOi3i4vJDMwGAARNivA==
   dependencies:
     "@cobalt/css-image" "^1.0.8"
+    classcat "^4.0.2"
+
+"@cobalt/react-input-group@^1.3.7":
+  version "1.3.7"
+  resolved "https://nexus.cap.sh:8443/repository/talkdesk-npm/@cobalt/react-input-group/-/react-input-group-1.3.7.tgz#9f8496f6c6aa3072c05c053c58d60aac6c90acda"
+  integrity sha512-UUrEb5qp62xm0nMkEutW/FAn/8FYOb9vDglht5lNe/aR7SFHPo1V1z2BuROqtnObUcVAiujRgVp9tkhGwNhoxg==
+  dependencies:
+    "@cobalt/css-input-group" "^1.2.5"
     classcat "^4.0.2"
 
 "@cobalt/react-input@^1.3.9":
