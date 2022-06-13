@@ -18,8 +18,8 @@ function ChatList(props: ChatListProps) {
   
   return (
     <List>
-      {agentList.map((agent) => (
-        <ClickableItem onClick={() => onChooseAgent(agent.id)}>
+      {agentList.map((agent, index) => (
+        <ClickableItem key={index} onClick={() => onChooseAgent(agent.id)}>
           <Divider />
 
           <Flex

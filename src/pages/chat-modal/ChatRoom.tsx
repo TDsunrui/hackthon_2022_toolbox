@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Box from "@cobalt/react-box";
 import Divider from "@cobalt/react-divider";
@@ -26,20 +26,52 @@ interface ChatRoomProps {
   onBack: () => void;
 }
 
+const genDate = (date: Date) => {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  return `Today, ${hours}:${minutes}`;
+};
+
 function ChatRoom(props: ChatRoomProps) {
   const { agent, onBack } = props;
 
   const scrollBoxRef = useRef<HTMLDivElement>(null);
   
   const [inputValue, setInputValue] = useState('');
-  const [messages, setMessages] = useState<MessageType[]>([]);
-
-  const genDate = () => {
-    const date = new Date();
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    return `Today, ${hours}:${minutes}`;
-  };
+  const [messages, setMessages] = useState<MessageType[]>([
+    {
+      position: 'right',
+      name: agent.name,
+      avatar: agent.avatar,
+      status: agent.status,
+      time: genDate(new Date(Date.now() - 6 * 60 * 1000)),
+      message: 'I have a problem here and I need your help.',
+    },
+    {
+      position: 'left',
+      name: agent.name,
+      avatar: agent.avatar,
+      status: agent.status,
+      time: genDate(new Date(Date.now() - 5 * 60 * 1000)),
+      message: 'What can I do for you?',
+    },
+    {
+      position: 'right',
+      name: agent.name,
+      avatar: agent.avatar,
+      status: agent.status,
+      time: genDate(new Date(Date.now() - 4 * 60 * 1000)),
+      message: 'The customer has a problem in using the product and I don’t know the details.',
+    },
+    {
+      position: 'left',
+      name: agent.name,
+      avatar: agent.avatar,
+      status: agent.status,
+      time: genDate(new Date(Date.now() - 1 * 60 * 1000)),
+      message: 'Don’t worry. I’ll handle it.',
+    },
+  ]);
 
   const sendMessage = (position: MessageType['position']) => {
     if (inputValue.trim().length === 0) return;
@@ -49,7 +81,7 @@ function ChatRoom(props: ChatRoomProps) {
       name: agent.name,
       avatar: agent.avatar,
       status: agent.status,
-      time: genDate(),
+      time: genDate(new Date()),
       message: inputValue,
     };
     setMessages((messages) => ([
@@ -61,6 +93,10 @@ function ChatRoom(props: ChatRoomProps) {
       scrollBoxRef.current?.scrollTo(0, 99999);
     });
   };
+
+  useEffect(() => {
+    scrollBoxRef.current?.scrollTo(0, 99999);
+  }, []);
   
   return (
     <Flex style={{ flex: 1 }} direction="column" alignX="stretch">

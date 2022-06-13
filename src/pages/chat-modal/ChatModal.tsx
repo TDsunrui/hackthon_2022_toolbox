@@ -36,7 +36,7 @@ function ChatModal({ app }: ChatModalProps) {
       name: 'Alison',
       avatar: 'AL',
       lastTime: '14:18, Today',
-      unreadCount: 1,
+      unreadCount: 4,
       status: 'green',
     },
     {
