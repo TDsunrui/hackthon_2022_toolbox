@@ -129,7 +129,7 @@ function ChatModal({ app }: ChatModalProps) {
         right: 0,
         width: '344px',
       }}
-      visible={app.id === '2'}
+      visible={app.id === '1'}
     >
       <Flex style={{ position: 'relative' }} direction="column" alignX="stretch" height="572px" scrollable>
         {/* Close button */}
@@ -143,12 +143,14 @@ function ChatModal({ app }: ChatModalProps) {
           <Icon name="close" size="small" />
         </Button>
 
-        <Flex paddingX="4" paddingTop="5" paddingBottom="3" gap="2">
+        <Flex paddingLeft="4" paddingRight="6" paddingTop="5" paddingBottom="3">
           <Icon name={app.icon} size="tiny" color={app.iconColor} />
 
-          <Box>
+          <Box paddingLeft="2" width="calc(100% - 20px)">
             <Text color="#202830">{app.name}</Text>
-            <Text color="#6F767D" size="small">{app.description}</Text>
+            <Text color="#6F767D" size="small" truncated title={app.description}>
+              {app.description}
+            </Text>
           </Box>
         </Flex>
 

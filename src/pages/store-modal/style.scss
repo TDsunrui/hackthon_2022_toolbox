@@ -1,6 +1,6 @@
 .store-item-left {
   position: relative;
-  flex: 1;
+  width: calc(100% - 90px);
   cursor: pointer;
   
   &:hover {

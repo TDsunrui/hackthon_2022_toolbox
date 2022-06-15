@@ -9,6 +9,7 @@ import imgSrc1 from '../../assets/images/popup_1.png';
 import imgSrc2 from '../../assets/images/popup_2.png';
 import imgSrc3 from '../../assets/images/popup_3.png';
 import imgSrc4 from '../../assets/images/popup_4.png';
+import imgSrc5 from '../../assets/images/popup_5.png';
 
 export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal';
 
@@ -43,47 +44,47 @@ const initialState: GlobalState = {
   appList: [
     {
       id: '1',
-      icon: 'work',
-      iconColor: '#3E048B',
-      name: 'Case Creator',
-      description: 'Agent can create case anytime to track something.',
-      imgSrc: imgSrc1,
-      status: AppStatusEnum.UNINSTALLED,
-    },
-    {
-      id: '2',
       icon: 'question_answer',
       iconColor: '#3b8553',
       name: 'Whisper',
       description: 'Sending messages and mutual support between agents.',
+      imgSrc: imgSrc1,
+      status: AppStatusEnum.INSTALLED,
+    },
+    {
+      id: '2',
+      icon: 'call',
+      iconColor: '#e3ab3d',
+      name: 'Callbar',
+      description: 'The applet allows agents to make and receive calls.',
       imgSrc: imgSrc2,
       status: AppStatusEnum.INSTALLED,
     },
     {
       id: '3',
-      icon: 'call',
-      iconColor: '#e3ab3d',
-      name: 'Callbar',
-      description: 'The applet allows agents to make and receive calls.',
-      imgSrc: imgSrc3,
-      status: AppStatusEnum.INSTALLED,
-    },
-    {
-      id: '4',
       icon: 'insert_drive_file',
       iconColor: '#215dd7',
       name: 'Remind Me',
       description: 'Reminds agents himself something important need to track.',
+      imgSrc: imgSrc3,
+      status: AppStatusEnum.UNINSTALLED,
+    },
+    {
+      id: '4',
+      icon: 'work',
+      iconColor: '#3E048B',
+      name: 'Case Creator',
+      description: 'Agent can create case anytime to track something.',
       imgSrc: imgSrc4,
       status: AppStatusEnum.UNINSTALLED,
     },
     {
       id: '5',
-      icon: 'settings_ethernet',
-      iconColor: '#215dd7',
+      icon: 'assignment',
+      iconColor: '#bed0ef',
       name: 'Word Fetching',
       description: 'Integrated with different applications and provide users with a quick access.',
-      imgSrc: imgSrc4,
+      imgSrc: imgSrc5,
       status: AppStatusEnum.UNINSTALLED,
     },
   ],

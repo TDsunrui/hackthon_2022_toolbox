@@ -19,7 +19,6 @@ import './global.scss';
 function App() {
   const dispatch = useAppDispatch();
   const { curPage } = useAppSelector((state) => state.global);
-  
 
   const [navBarNode, setNavBarNode] = useState<HTMLButtonElement | null>(null);
   const [appletsModalNode, setAppletsModalNode] = useState<HTMLDivElement | null>(null);

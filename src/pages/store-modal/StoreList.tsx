@@ -51,9 +51,9 @@ function StoreList({ appList } : StoreListProps) {
           <Flex className="store-item-left" alignY="center" paddingLeft="6" height="100%">
             <Icon name={icon} size="medium" color={iconColor} />
 
-            <Box paddingLeft="4">
+            <Box paddingLeft="4" width="calc(100% - 32px)">
               <Text color="#202830">{name}</Text>
-              <Text color="#6F767D" size="small">{description}</Text>
+              <Text color="#6F767D" size="small" truncated title={description}>{description}</Text>
             </Box>
 
             <Popup className="store-item-left-popup" visible>

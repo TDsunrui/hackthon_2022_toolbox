@@ -11,8 +11,8 @@ import PhoneModal from "../phone-modal";
 import ChatModal from "../chat-modal";
 
 const appMap: { [key: string]: PageType } = {
-  '3': 'phone-modal',
-  '2': 'chat-modal',
+  '1': 'chat-modal',
+  '2': 'phone-modal',
 };
 
 interface ShortcurButtonsProps {
