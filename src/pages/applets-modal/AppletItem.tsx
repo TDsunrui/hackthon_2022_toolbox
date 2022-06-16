@@ -1,8 +1,9 @@
 import { ClickableItem } from "@cobalt/react-list";
 import Box from "@cobalt/react-box";
 import Flex from "@cobalt/react-flex";
-import Icon from "@cobalt/react-icon";
 import { Text } from "@cobalt/react-typography";
+
+import RIcon from "../components";
   
 import { AppType } from "@/slices/global/globalSlice";
 
@@ -17,7 +18,7 @@ function AppletItem(props: AppletItemProps) {
   return (
     <ClickableItem style={{ width: '100%' }} onClick={onClick}>
       <Flex paddingX="2" paddingTop="2" paddingBottom="1">
-        <Icon name={icon} size="tiny" color={iconColor} />
+        <RIcon icon={icon} iconColor={iconColor} size="tiny" />
 
         <Box paddingLeft="2" width="calc(100% - 20px)">
           <Text color="#202830">{name}</Text>

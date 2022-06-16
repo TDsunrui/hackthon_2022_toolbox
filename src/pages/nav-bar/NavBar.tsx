@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { changeCurPage, PageType, useInstalledAppList } from "@/slices/global/globalSlice";
 import PhoneModal from "../phone-modal";
 import ChatModal from "../chat-modal";
+import RIcon from "../components";
 
 const appMap: { [key: string]: PageType } = {
   '1': 'chat-modal',
@@ -51,7 +52,7 @@ function NavBar(props: ShortcurButtonsProps) {
                 size="small"
                 onClick={() => handleClickInstalledAppBtn(appMap[app.id] || 'none')}
               >
-                <Icon name={app.icon} size="tiny" />
+                <RIcon icon={app.icon} size="tiny" />
               </Button>
             </Tooltip>
             

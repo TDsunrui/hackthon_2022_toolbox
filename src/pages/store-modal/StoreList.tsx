@@ -4,11 +4,14 @@ import Box from "@cobalt/react-box";
 import { Text } from "@cobalt/react-typography";
 import Spinner from "@cobalt/react-spinner";
 import Image from "@cobalt/react-image";
+import Popup from "@cobalt/react-popup";
 
-import './style.scss';
+import RIcon from "../components";
+
 import { useAppDispatch } from "@/app/hooks";
 import { changeAppStatus, AppStatusEnum, AppType } from "@/slices/global/globalSlice";
-import Popup from "@cobalt/react-popup";
+
+import './style.scss';
 
 interface StoreListProps {
   appList: AppType[];
@@ -49,7 +52,7 @@ function StoreList({ appList } : StoreListProps) {
       {appList.map(({ id, icon, iconColor, name, description, imgSrc, status }) => (
         <Flex key={id} alignY="center" height="60px">
           <Flex className="store-item-left" alignY="center" paddingLeft="6" height="100%">
-            <Icon name={icon} size="medium" color={iconColor} />
+            <RIcon icon={icon} iconColor={iconColor} size="medium" />
 
             <Box paddingLeft="4" width="calc(100% - 32px)">
               <Text color="#202830">{name}</Text>
