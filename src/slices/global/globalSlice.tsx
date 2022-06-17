@@ -11,7 +11,7 @@ import imgSrc3 from '../../assets/images/popup_3.png';
 import imgSrc4 from '../../assets/images/popup_4.png';
 import imgSrc5 from '../../assets/images/popup_5.png';
 
-export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal';
+export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal';
 
 export type AppType = {
   id: string;
@@ -82,8 +82,8 @@ const initialState: GlobalState = {
       id: '5',
       icon: 'assignment',
       iconColor: '#bed0ef',
-      name: 'Word Fetching',
-      description: 'Integrated with different applications and provide users with a quick access.',
+      name: 'Words Fetching',
+      description: 'Integrated with different applications and provide users with quick access.',
       imgSrc: imgSrc5,
       status: AppStatusEnum.UNINSTALLED,
     },
