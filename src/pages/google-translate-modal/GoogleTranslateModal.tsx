@@ -23,7 +23,7 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
 
   const dispatch = useAppDispatch();
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(`My computer can't work.`);
   
   return (
     <Popup
@@ -100,7 +100,7 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
         </Flex>
 
 
-        {inputValue === 'hello' && (
+        {inputValue === `My computer can't work.` && (
           <Flex
             direction="column"
             alignY="space-between"
@@ -109,7 +109,7 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
             height="133px"
           >
             <Flex alignX="space-between" width="100%">
-              <Heading level="4" color="#fff">olá</Heading>
+              <Heading level="4" color="#fff">O meu computador não funciona.</Heading>
               <Icon size="tiny" color="#fff" name="star_border" />
             </Flex>
 

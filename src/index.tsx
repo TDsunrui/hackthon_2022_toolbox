@@ -8,9 +8,11 @@ import { store } from '@/app/store';
 
 import bg1 from './assets/images/bg.png';
 import bg2 from './assets/images/bg2.png';
+import bg3 from './assets/images/bg3.png';
+import bg4 from './assets/images/bg4.png';
 
 let curIndex = 0;
-const bgList = [bg1, bg2];
+const bgList = [bg1, bg2, bg3, bg4];
 
 const rootEle = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(rootEle);
