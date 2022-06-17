@@ -11,7 +11,7 @@ import imgSrc3 from '../../assets/images/popup_3.png';
 import imgSrc4 from '../../assets/images/popup_4.png';
 import imgSrc5 from '../../assets/images/popup_5.png';
 
-export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal';
+export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal' | 'google-translation';
 
 export type AppType = {
   id: string;
@@ -42,15 +42,42 @@ interface GlobalState {
 const initialState: GlobalState = {
   curPage: 'none',
   appList: [
-    // {
-    //   id: '1',
-    //   icon: 'question_answer',
-    //   iconColor: '#3b8553',
-    //   name: 'Whisper',
-    //   description: 'Sending messages and mutual support between agents.',
-    //   imgSrc: imgSrc1,
-    //   status: AppStatusEnum.INSTALLED,
-    // },
+    {
+      id: '8',
+      icon: 'account_box',
+      iconColor: '',
+      name: 'Google Translation',
+      description: 'A multilingual neural machine translation service to translate from one language into another.',
+      imgSrc: imgSrc5,
+      status: AppStatusEnum.UNINSTALLED,
+    },
+    {
+      id: '7',
+      icon: 'account_balance_wallet',
+      iconColor: '',
+      name: 'TikTok',
+      description: 'A short-form video hosting service hosts a variety of short-form user videos.',
+      imgSrc: imgSrc5,
+      status: AppStatusEnum.UNINSTALLED,
+    },
+    {
+      id: '6',
+      icon: 'calendar_medical',
+      iconColor: '',
+      name: 'WhatsApp',
+      description: 'An internationally available freeware, cross-platform centralized IM and VoIP service.',
+      imgSrc: imgSrc5,
+      status: AppStatusEnum.UNINSTALLED,
+    },
+    {
+      id: '1',
+      icon: 'question_answer',
+      iconColor: '#3b8553',
+      name: 'Whisper',
+      description: 'Sending messages and mutual support between agents.',
+      imgSrc: imgSrc1,
+      status: AppStatusEnum.INSTALLED,
+    },
     {
       id: '2',
       icon: 'call',
@@ -84,33 +111,6 @@ const initialState: GlobalState = {
       iconColor: '#bed0ef',
       name: 'Words Fetching',
       description: 'Integrated with different applications and provide users with quick access.',
-      imgSrc: imgSrc5,
-      status: AppStatusEnum.UNINSTALLED,
-    },
-    {
-      id: '6',
-      icon: 'calendar_medical',
-      iconColor: '',
-      name: 'WhatsApp',
-      description: 'An internationally available freeware, cross-platform centralized IM and VoIP service.',
-      imgSrc: imgSrc5,
-      status: AppStatusEnum.UNINSTALLED,
-    },
-    {
-      id: '7',
-      icon: 'account_balance_wallet',
-      iconColor: '',
-      name: 'TikTok',
-      description: 'A short-form video hosting service hosts a variety of short-form user videos.',
-      imgSrc: imgSrc5,
-      status: AppStatusEnum.UNINSTALLED,
-    },
-    {
-      id: '8',
-      icon: 'account_box',
-      iconColor: '',
-      name: 'Google Translation',
-      description: 'A multilingual neural machine translation service to translate from one language into another.',
       imgSrc: imgSrc5,
       status: AppStatusEnum.UNINSTALLED,
     },
