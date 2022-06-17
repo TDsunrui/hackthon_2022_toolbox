@@ -11,7 +11,7 @@ import imgSrc3 from '../../assets/images/popup_3.png';
 import imgSrc4 from '../../assets/images/popup_4.png';
 import imgSrc5 from '../../assets/images/popup_5.png';
 
-export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal';
+export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal' | 'google-translation';
 
 export type AppType = {
   id: string;
@@ -42,15 +42,15 @@ interface GlobalState {
 const initialState: GlobalState = {
   curPage: 'none',
   appList: [
-    // {
-    //   id: '1',
-    //   icon: 'question_answer',
-    //   iconColor: '#3b8553',
-    //   name: 'Whisper',
-    //   description: 'Sending messages and mutual support between agents.',
-    //   imgSrc: imgSrc1,
-    //   status: AppStatusEnum.INSTALLED,
-    // },
+    {
+      id: '1',
+      icon: 'question_answer',
+      iconColor: '#3b8553',
+      name: 'Whisper',
+      description: 'Sending messages and mutual support between agents.',
+      imgSrc: imgSrc1,
+      status: AppStatusEnum.INSTALLED,
+    },
     {
       id: '2',
       icon: 'call',

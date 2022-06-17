@@ -5,17 +5,20 @@ import Button from "@cobalt/react-button";
 import Icon from "@cobalt/react-icon";
 import { Text } from "@cobalt/react-typography";
 
-import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { changeCurPage, PageType, useInstalledAppList } from "@/slices/global/globalSlice";
-import WordsFetchingModal from '../words-fetching-modal';
 import PhoneModal from "../phone-modal";
 import ChatModal from "../chat-modal";
+import WordsFetchingModal from '../words-fetching-modal';
+import GoogleTranslateModal from "../google-translate-modal";
 import RIcon from "../components";
+
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
+import { changeCurPage, PageType, useInstalledAppList } from "@/slices/global/globalSlice";
 
 const appMap: { [key: string]: PageType } = {
   '1': 'chat-modal',
   '2': 'phone-modal',
   '5': 'words-fetching-modal',
+  '8': 'google-translation',
 };
 
 interface ShortcurButtonsProps {
@@ -63,6 +66,8 @@ function NavBar(props: ShortcurButtonsProps) {
             {curPage === 'chat-modal' && <ChatModal app={app} />}
 
             {curPage === 'words-fetching-modal' && <WordsFetchingModal app={app} />}
+
+            {curPage === 'google-translation' && <GoogleTranslateModal app={app} />}
           </Box>
         ))}
       </Flex>
