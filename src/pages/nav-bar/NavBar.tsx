@@ -7,6 +7,7 @@ import { Text } from "@cobalt/react-typography";
 
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { changeCurPage, PageType, useInstalledAppList } from "@/slices/global/globalSlice";
+import WordsFetchingModal from '../words-fetching-modal';
 import PhoneModal from "../phone-modal";
 import ChatModal from "../chat-modal";
 import RIcon from "../components";
@@ -14,6 +15,7 @@ import RIcon from "../components";
 const appMap: { [key: string]: PageType } = {
   '1': 'chat-modal',
   '2': 'phone-modal',
+  '5': 'words-fetching-modal',
 };
 
 interface ShortcurButtonsProps {
@@ -59,6 +61,8 @@ function NavBar(props: ShortcurButtonsProps) {
             {curPage === 'phone-modal' && <PhoneModal app={app} />}
 
             {curPage === 'chat-modal' && <ChatModal app={app} />}
+
+            {curPage === 'words-fetching-modal' && <WordsFetchingModal app={app} />}
           </Box>
         ))}
       </Flex>
