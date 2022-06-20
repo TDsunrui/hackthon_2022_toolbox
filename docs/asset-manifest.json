@@ -1,24 +1,25 @@
 {
   "files": {
     "main.css": "./static/css/main.700b3e20.css",
-    "main.js": "./static/js/main.421d7852.js",
+    "main.js": "./static/js/main.0fb9cc80.js",
     "static/media/bg4.png": "./static/media/bg4.554fa9a96ab13a772d9e.png",
     "static/media/bg2.png": "./static/media/bg2.9ce95188fe9cf633dc11.png",
     "static/media/bg3.png": "./static/media/bg3.bfe73d15b6c1f0d9e328.png",
     "static/media/bg.png": "./static/media/bg.072845b0c3681e061ac7.png",
-    "static/media/tiktok.png": "./static/media/tiktok.2873ab16b67e856eeb5b.png",
-    "static/media/baidu.png": "./static/media/baidu.b4b7128c56c552e1a928.png",
     "static/media/popup_1.png": "./static/media/popup_1.70f368cd880cce7d82ad.png",
     "static/media/popup_5.png": "./static/media/popup_5.b5493ca90ffb10ef46d8.png",
     "static/media/popup_2.png": "./static/media/popup_2.a0c3c939d009502a4930.png",
+    "static/media/popup_4.png": "./static/media/popup_4.f5901b91bdff612cb81a.png",
     "static/media/words_fetching.png": "./static/media/words_fetching.08c5873cced1c39dc506.png",
-    "static/media/whatsapp.png": "./static/media/whatsapp.54b21abd2138853bddcc.png",
+    "static/media/whatsapp_.png": "./static/media/whatsapp_.7e0c3f188288e8697d68.png",
+    "static/media/google_translate_.png": "./static/media/google_translate_.fd25a358608b2bd5a454.png",
+    "static/media/tiktok_.png": "./static/media/tiktok_.cfb382eb4eef8c6b1637.png",
     "index.html": "./index.html",
     "main.700b3e20.css.map": "./static/css/main.700b3e20.css.map",
-    "main.421d7852.js.map": "./static/js/main.421d7852.js.map"
+    "main.0fb9cc80.js.map": "./static/js/main.0fb9cc80.js.map"
   },
   "entrypoints": [
     "static/css/main.700b3e20.css",
-    "static/js/main.421d7852.js"
+    "static/js/main.0fb9cc80.js"
   ]
 }

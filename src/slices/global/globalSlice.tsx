@@ -11,7 +11,7 @@ import imgSrc3 from '../../assets/images/popup_3.png';
 import imgSrc4 from '../../assets/images/popup_4.png';
 import imgSrc5 from '../../assets/images/popup_5.png';
 
-export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal' | 'google-translation';
+export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal' | 'google-translation' | 'email-modal';
 
 export type AppType = {
   id: string;
@@ -39,11 +39,23 @@ interface GlobalState {
   appList: AppType[];
 }
 
+export enum AppIdEnum {
+  GOOGLE_TRANSLATION = '1',
+  TIKTOK = '2',
+  WHATSAPP = '3',
+  WHISPER = '4',
+  CALLBAR = '5',
+  CASE_CREATOR = '6',
+  EMAIL = '7',
+  REMIND_ME = '8',
+  WORDS_FETCHING = '9',
+}
+
 const initialState: GlobalState = {
   curPage: 'none',
   appList: [
     {
-      id: '8',
+      id: AppIdEnum.GOOGLE_TRANSLATION,
       icon: 'account_box',
       iconColor: '',
       name: 'Google Translation',
@@ -52,7 +64,7 @@ const initialState: GlobalState = {
       status: AppStatusEnum.UNINSTALLED,
     },
     {
-      id: '7',
+      id: AppIdEnum.TIKTOK,
       icon: 'account_balance_wallet',
       iconColor: '',
       name: 'TikTok',
@@ -61,7 +73,7 @@ const initialState: GlobalState = {
       status: AppStatusEnum.UNINSTALLED,
     },
     {
-      id: '6',
+      id: AppIdEnum.WHATSAPP,
       icon: 'calendar_medical',
       iconColor: '',
       name: 'WhatsApp',
@@ -70,7 +82,7 @@ const initialState: GlobalState = {
       status: AppStatusEnum.UNINSTALLED,
     },
     {
-      id: '1',
+      id: AppIdEnum.WHISPER,
       icon: 'question_answer',
       iconColor: '#3b8553',
       name: 'Whisper',
@@ -79,7 +91,7 @@ const initialState: GlobalState = {
       status: AppStatusEnum.INSTALLED,
     },
     {
-      id: '2',
+      id: AppIdEnum.CALLBAR,
       icon: 'call',
       iconColor: '#e3ab3d',
       name: 'Callbar',
@@ -88,16 +100,7 @@ const initialState: GlobalState = {
       status: AppStatusEnum.INSTALLED,
     },
     // {
-    //   id: '3',
-    //   icon: 'insert_drive_file',
-    //   iconColor: '#215dd7',
-    //   name: 'Remind Me',
-    //   description: 'Reminds agents himself something important need to track.',
-    //   imgSrc: imgSrc3,
-    //   status: AppStatusEnum.UNINSTALLED,
-    // },
-    // {
-    //   id: '4',
+    //   id: AppIdEnum.CASE_CREATOR,
     //   icon: 'work',
     //   iconColor: '#3E048B',
     //   name: 'Case Creator',
@@ -106,7 +109,25 @@ const initialState: GlobalState = {
     //   status: AppStatusEnum.UNINSTALLED,
     // },
     {
-      id: '5',
+      id: AppIdEnum.EMAIL,
+      icon: 'email',
+      iconColor: '#3E048B',
+      name: 'Email',
+      description: 'The applet allows agents to make and receive emails.',
+      imgSrc: imgSrc4,
+      status: AppStatusEnum.INSTALLED,
+    },
+    // {
+    //   id: AppIdEnum.REMIND_ME,
+    //   icon: 'insert_drive_file',
+    //   iconColor: '#215dd7',
+    //   name: 'Remind Me',
+    //   description: 'Reminds agents himself something important need to track.',
+    //   imgSrc: imgSrc3,
+    //   status: AppStatusEnum.UNINSTALLED,
+    // },
+    {
+      id: AppIdEnum.WORDS_FETCHING,
       icon: 'assignment',
       iconColor: '#bed0ef',
       name: 'Words Fetching',

@@ -1,9 +1,9 @@
 import Icon, { Name } from "@cobalt/react-icon";
 import Image from "@cobalt/react-image";
 
-import whatsAppSrc from '../../assets/images/whatsapp.png';
-import tikTokSrc from '../../assets/images/tiktok.png';
-import baiduSrc from '../../assets/images/baidu.png';
+import whatsAppSrc from '../../assets/images/whatsapp_.png';
+import tikTokSrc from '../../assets/images/tiktok_.png';
+import googleTranslateSrc from '../../assets/images/google_translate_.png';
 
 interface RIconProps {
   icon: Name;
@@ -21,7 +21,7 @@ function RIcon(props: RIconProps) {
   let pngSrc = '';
   if (icon === 'calendar_medical') pngSrc = whatsAppSrc;
   if (icon === 'account_balance_wallet') pngSrc = tikTokSrc;
-  if (icon === 'account_box') pngSrc = baiduSrc;
+  if (icon === 'account_box') pngSrc = googleTranslateSrc;
   
   return pngSrc ? (
     <Image src={pngSrc} alt={icon} width={width} height={width} />

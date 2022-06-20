@@ -11,7 +11,7 @@ import PhoneNumber from "./PhoneNumber";
 import PhoneCalling from "./PhoneCalling";
 
 import { useAppDispatch } from "@/app/hooks";
-import { AppType, changeCurPage } from "@/slices/global/globalSlice";
+import { AppIdEnum, AppType, changeCurPage } from "@/slices/global/globalSlice";
 
 import './style.scss';
 
@@ -36,7 +36,7 @@ function PhoneModal({ app }: PhoneModelProps) {
         right: 0,
         width: '344px',
       }}
-      visible={app.id === '2'}
+      visible={app.id === AppIdEnum.CALLBAR}
     >
       <Box style={{ position: 'relative' }} paddingTop="3">
         {/* Close button */}

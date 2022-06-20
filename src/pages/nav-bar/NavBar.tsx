@@ -5,20 +5,22 @@ import Button from "@cobalt/react-button";
 import Icon from "@cobalt/react-icon";
 import { Text } from "@cobalt/react-typography";
 
-import PhoneModal from "../phone-modal";
 import ChatModal from "../chat-modal";
+import PhoneModal from "../phone-modal";
+import EmailModal from "../email-modal";
 import WordsFetchingModal from '../words-fetching-modal';
 import GoogleTranslateModal from "../google-translate-modal";
 import RIcon from "../components";
 
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
-import { changeCurPage, PageType, useInstalledAppList } from "@/slices/global/globalSlice";
+import { AppIdEnum, changeCurPage, PageType, useInstalledAppList } from "@/slices/global/globalSlice";
 
 const appMap: { [key: string]: PageType } = {
-  '1': 'chat-modal',
-  '2': 'phone-modal',
-  '5': 'words-fetching-modal',
-  '8': 'google-translation',
+  [AppIdEnum.GOOGLE_TRANSLATION]: 'google-translation',
+  [AppIdEnum.WHISPER]: 'chat-modal',
+  [AppIdEnum.CALLBAR]: 'phone-modal',
+  [AppIdEnum.EMAIL]: 'email-modal',
+  [AppIdEnum.WORDS_FETCHING]: 'words-fetching-modal',
 };
 
 interface ShortcurButtonsProps {
@@ -60,10 +62,12 @@ function NavBar(props: ShortcurButtonsProps) {
                 <RIcon icon={app.icon} size="tiny" />
               </Button>
             </Tooltip>
+
+            {curPage === 'chat-modal' && <ChatModal app={app} />}
             
             {curPage === 'phone-modal' && <PhoneModal app={app} />}
 
-            {curPage === 'chat-modal' && <ChatModal app={app} />}
+            {curPage === 'email-modal' && <EmailModal app={app} />}
 
             {curPage === 'words-fetching-modal' && <WordsFetchingModal app={app} />}
 

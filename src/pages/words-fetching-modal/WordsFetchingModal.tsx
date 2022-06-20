@@ -4,7 +4,7 @@ import Popup from '@cobalt/react-popup';
 import Image from "@cobalt/react-image";
 import Button from '@cobalt/react-button';
 import Icon from '@cobalt/react-icon';
-import { AppType, changeCurPage } from '@/slices/global/globalSlice';
+import { AppIdEnum, AppType, changeCurPage } from '@/slices/global/globalSlice';
 import { useAppDispatch } from '@/app/hooks';
 import wordsFetchingImg from '../../assets/images/words_fetching.png';
 
@@ -23,7 +23,7 @@ function WordsFetchingModal({ app }: ChatModalProps) {
         right: 0,
         width: '344px'
       }}
-      visible={app.id === '5'}
+      visible={app.id === AppIdEnum.WORDS_FETCHING}
     >
       <Flex style={{ position: 'relative' }} paddingTop="3">
         {/* Close button */}

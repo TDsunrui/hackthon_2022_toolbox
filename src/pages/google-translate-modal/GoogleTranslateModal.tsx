@@ -13,7 +13,7 @@ import Spinner from "@cobalt/react-spinner";
 import RIcon from "../components";
 
 import { useAppDispatch } from "@/app/hooks";
-import { AppType, changeCurPage } from "@/slices/global/globalSlice";
+import { AppIdEnum, AppType, changeCurPage } from "@/slices/global/globalSlice";
 
 interface GoogleTranslateModalProps {
   app: AppType;
@@ -38,7 +38,7 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
         width: '344px',
         overflow: 'hidden',
       }}
-      visible={app.id === '8'}
+      visible={app.id === AppIdEnum.GOOGLE_TRANSLATION}
     >
       <Box style={{ position: 'relative' }} paddingTop="3">
         {/* Close button */}
@@ -91,7 +91,7 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
 
         <Box padding="2">
           <Textarea
-            style={{ height: '86px', fontSize: '16px', border: 'none' }}
+            style={{ height: '130px', fontSize: '16px', border: 'none' }}
             resizable={false}
             value={inputValue}
             onChange={(e) => {
