@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import Popup from "@cobalt/react-popup";
 import Flex from "@cobalt/react-flex";
@@ -8,6 +8,7 @@ import { Heading, Text } from "@cobalt/react-typography";
 import Icon from "@cobalt/react-icon";
 import Divider from "@cobalt/react-divider";
 import Textarea from "@cobalt/react-textarea";
+import Spinner from "@cobalt/react-spinner";
 
 import RIcon from "../components";
 
@@ -23,8 +24,11 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
 
   const dispatch = useAppDispatch();
 
-  const [inputValue, setInputValue] = useState(`My computer can't work.`);
-  
+  const timerId = useRef<NodeJS.Timeout>();
+
+  const [inputValue, setInputValue] = useState('');
+  const [loading, setLoading] = useState(false);
+
   return (
     <Popup
       style={{
@@ -90,7 +94,14 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
             style={{ height: '86px', fontSize: '16px', border: 'none' }}
             resizable={false}
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => {
+              timerId.current && clearTimeout(timerId.current);
+              setLoading(true);
+              setInputValue(e.target.value);
+              timerId.current = setTimeout(() => {
+                setLoading(false);
+              }, 1000);
+            }}
           />
         </Box>
 
@@ -103,26 +114,33 @@ function GoogleTranslateModal(props: GoogleTranslateModalProps) {
         {inputValue === `My computer can't work.` && (
           <Flex
             direction="column"
-            alignY="space-between"
+            alignX={loading ? 'center' : undefined}
+            alignY={loading ? 'center' : 'space-between'}
             padding="4"
             backgroundColor="#4d27bf"
             height="133px"
           >
-            <Flex alignX="space-between" width="100%">
-              <Heading level="4" color="#fff">O meu computador não funciona.</Heading>
-              <Icon size="tiny" color="#fff" name="star_border" />
-            </Flex>
+            {loading && <Spinner size="small" />}
+            
+            {!loading && (
+              <>
+                <Flex alignX="space-between" width="100%">
+                  <Heading level="4" color="#fff">O meu computador não funciona.</Heading>
+                  <Icon size="tiny" color="#fff" name="star_border" />
+                </Flex>
 
-            <Flex alignX="space-between" width="100%">
-              <Icon size="tiny" color="#fff" name="volume_up" />
+                <Flex alignX="space-between" width="100%">
+                  <Icon size="tiny" color="#fff" name="volume_up" />
 
-              <Flex gap="3">
-                <Icon size="tiny" color="#fff" name="search" />
-                <Icon size="tiny" color="#fff" name="copy" />
-                <Icon size="tiny" color="#fff" name="thumbs_up_down" />
-                <Icon size="tiny" color="#fff" name="share" />
-              </Flex>
-            </Flex>
+                  <Flex gap="3">
+                    <Icon size="tiny" color="#fff" name="search" />
+                    <Icon size="tiny" color="#fff" name="copy" />
+                    <Icon size="tiny" color="#fff" name="thumbs_up_down" />
+                    <Icon size="tiny" color="#fff" name="share" />
+                  </Flex>
+                </Flex>
+              </>
+            )}
           </Flex>
         )}
       </Box>

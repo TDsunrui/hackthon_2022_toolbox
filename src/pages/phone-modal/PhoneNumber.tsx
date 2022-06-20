@@ -31,6 +31,7 @@ function PhoneNumber({ app, onCall }: PhoneNumberProps) {
   };
 
   const handleCall = () => {
+    timerId.current && clearTimeout(timerId.current);
     setLoading(true);
     timerId.current = setTimeout(() => {
       setLoading(false);
