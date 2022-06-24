@@ -24,9 +24,8 @@ function AppletsModal({ forwardedRef }: AppletsModalProps) {
     id: '999',
     icon: 'plus',
     iconColor: 'var(--primary-700)',
-    name: 'Applets Store',
-    description: 'Manage applets from the store',
-    imgSrc: '',
+    name: 'Toolbox Store',
+    description: 'Manage toolbox from the store',
     status: AppStatusEnum.NULL,
     onClick: () => dispatch(changeCurPage('store-modal')),
   };
@@ -64,7 +63,7 @@ function AppletsModal({ forwardedRef }: AppletsModalProps) {
           level="4"
           color="#202830"
         >
-          Applets
+          Toolbox
         </Heading>
 
         <List>
@@ -75,7 +74,7 @@ function AppletsModal({ forwardedRef }: AppletsModalProps) {
 
           <Divider />
 
-          {/* Add applets button */}
+          {/* Add toolbox button */}
           <Box paddingX="2" paddingY="1">
             <AppletItem data={addAppletItem} />
           </Box>

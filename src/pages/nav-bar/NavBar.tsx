@@ -10,6 +10,7 @@ import PhoneModal from "../phone-modal";
 import EmailModal from "../email-modal";
 import WordsFetchingModal from '../words-fetching-modal';
 import GoogleTranslateModal from "../google-translate-modal";
+import CaseCreatorModal from "../case-creator-modal";
 import RIcon from "../components";
 
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
@@ -21,6 +22,7 @@ const appMap: { [key: string]: PageType } = {
   [AppIdEnum.CALLBAR]: 'phone-modal',
   [AppIdEnum.EMAIL]: 'email-modal',
   [AppIdEnum.WORDS_FETCHING]: 'words-fetching-modal',
+  [AppIdEnum.CASE_CREATOR]: 'case-creator-modal',
 };
 
 interface ShortcurButtonsProps {
@@ -42,8 +44,8 @@ function NavBar(props: ShortcurButtonsProps) {
   };
   
   const handleClickAppletsBtn = () => {
-    if (!['applets-modal', 'store-modal'].includes(curPage)) {
-      return dispatch(changeCurPage('applets-modal'));
+    if (!['toolbox-modal', 'store-modal'].includes(curPage)) {
+      return dispatch(changeCurPage('toolbox-modal'));
     }
     dispatch(changeCurPage('none'));
   };
@@ -69,6 +71,8 @@ function NavBar(props: ShortcurButtonsProps) {
 
             {curPage === 'email-modal' && <EmailModal app={app} />}
 
+            {<CaseCreatorModal app={app} />}
+
             {curPage === 'words-fetching-modal' && <WordsFetchingModal app={app} />}
 
             {curPage === 'google-translation' && <GoogleTranslateModal app={app} />}
@@ -83,7 +87,7 @@ function NavBar(props: ShortcurButtonsProps) {
       >
         <Flex alignY="center" gap="1">
           <Icon name="extension" size="tiny" />
-          <Text>Applets</Text>
+          <Text>Toolbox</Text>
         </Flex>
       </Button>
     </Flex>

@@ -5,13 +5,7 @@ import { Name } from '@cobalt/react-icon';
 import { useAppSelector } from '@/app/hooks';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import imgSrc1 from '../../assets/images/popup_1.png';
-import imgSrc2 from '../../assets/images/popup_2.png';
-import imgSrc3 from '../../assets/images/popup_3.png';
-import imgSrc4 from '../../assets/images/popup_4.png';
-import imgSrc5 from '../../assets/images/popup_5.png';
-
-export type PageType = 'none' | 'applets-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal' | 'google-translation' | 'email-modal';
+export type PageType = 'none' | 'toolbox-modal' | 'store-modal' | 'phone-modal' | 'chat-modal' | 'words-fetching-modal' | 'google-translation' | 'email-modal' | 'case-creator-modal';
 
 export type AppType = {
   id: string;
@@ -19,7 +13,6 @@ export type AppType = {
   iconColor: CSSProperties['color'];
   name: string;
   description: string;
-  imgSrc: string;
   status: AppStatusEnum;
   onClick?: () => void;
 }
@@ -54,85 +47,76 @@ export enum AppIdEnum {
 const initialState: GlobalState = {
   curPage: 'none',
   appList: [
-    {
-      id: AppIdEnum.GOOGLE_TRANSLATION,
-      icon: 'account_box',
-      iconColor: '',
-      name: 'Google Translation',
-      description: 'A multilingual neural machine translation service to translate from one language into another.',
-      imgSrc: imgSrc5,
-      status: AppStatusEnum.UNINSTALLED,
-    },
-    {
-      id: AppIdEnum.TIKTOK,
-      icon: 'account_balance_wallet',
-      iconColor: '',
-      name: 'TikTok',
-      description: 'A short-form video hosting service hosts a variety of short-form user videos.',
-      imgSrc: imgSrc5,
-      status: AppStatusEnum.UNINSTALLED,
-    },
-    {
-      id: AppIdEnum.WHATSAPP,
-      icon: 'calendar_medical',
-      iconColor: '',
-      name: 'WhatsApp',
-      description: 'An internationally available freeware, cross-platform centralized IM and VoIP service.',
-      imgSrc: imgSrc5,
-      status: AppStatusEnum.UNINSTALLED,
-    },
+    // {
+    //   id: AppIdEnum.GOOGLE_TRANSLATION,
+    //   icon: 'account_box',
+    //   iconColor: '',
+    //   name: 'Google Translation',
+    //   description: 'A multilingual neural machine translation service to translate from one language into another.',
+    //   status: AppStatusEnum.UNINSTALLED,
+    // },
+    // {
+    //   id: AppIdEnum.TIKTOK,
+    //   icon: 'account_balance_wallet',
+    //   iconColor: '',
+    //   name: 'TikTok',
+    //   description: 'A short-form video hosting service hosts a variety of short-form user videos.',
+    //   status: AppStatusEnum.UNINSTALLED,
+    // },
+    // {
+    //   id: AppIdEnum.WHATSAPP,
+    //   icon: 'calendar_medical',
+    //   iconColor: '',
+    //   name: 'WhatsApp',
+    //   description: 'An internationally available freeware, cross-platform centralized IM and VoIP service.',
+    //   status: AppStatusEnum.UNINSTALLED,
+    // },
     {
       id: AppIdEnum.WHISPER,
       icon: 'question_answer',
       iconColor: '#3b8553',
       name: 'Whisper',
       description: 'Sending messages and mutual support between agents.',
-      imgSrc: imgSrc1,
-      status: AppStatusEnum.INSTALLED,
-    },
-    {
-      id: AppIdEnum.CALLBAR,
-      icon: 'call',
-      iconColor: '#e3ab3d',
-      name: 'Callbar',
-      description: 'The applet allows agents to make and receive calls.',
-      imgSrc: imgSrc2,
       status: AppStatusEnum.INSTALLED,
     },
     // {
-    //   id: AppIdEnum.CASE_CREATOR,
-    //   icon: 'work',
-    //   iconColor: '#3E048B',
-    //   name: 'Case Creator',
-    //   description: 'Agent can create case anytime to track something.',
-    //   imgSrc: imgSrc4,
-    //   status: AppStatusEnum.UNINSTALLED,
+    //   id: AppIdEnum.CALLBAR,
+    //   icon: 'call',
+    //   iconColor: '#e3ab3d',
+    //   name: 'Callbar',
+    //   description: 'The applet allows agents to make and receive calls.',
+    //   status: AppStatusEnum.INSTALLED,
     // },
     {
-      id: AppIdEnum.EMAIL,
-      icon: 'email',
+      id: AppIdEnum.CASE_CREATOR,
+      icon: 'work',
       iconColor: '#3E048B',
-      name: 'Email',
-      description: 'The applet allows agents to make and receive emails.',
-      imgSrc: imgSrc4,
+      name: 'Case Creator',
+      description: 'Agent can create case anytime to track something.',
       status: AppStatusEnum.INSTALLED,
     },
     // {
-    //   id: AppIdEnum.REMIND_ME,
-    //   icon: 'insert_drive_file',
-    //   iconColor: '#215dd7',
-    //   name: 'Remind Me',
-    //   description: 'Reminds agents himself something important need to track.',
-    //   imgSrc: imgSrc3,
-    //   status: AppStatusEnum.UNINSTALLED,
+    //   id: AppIdEnum.EMAIL,
+    //   icon: 'email',
+    //   iconColor: '#3E048B',
+    //   name: 'Email',
+    //   description: 'The applet allows agents to make and receive emails.',
+    //   status: AppStatusEnum.INSTALLED,
     // },
+    {
+      id: AppIdEnum.REMIND_ME,
+      icon: 'insert_drive_file',
+      iconColor: '#215dd7',
+      name: 'Remind Me',
+      description: 'Reminds agents himself something important need to track.',
+      status: AppStatusEnum.UNINSTALLED,
+    },
     {
       id: AppIdEnum.WORDS_FETCHING,
       icon: 'assignment',
       iconColor: '#bed0ef',
       name: 'Words Fetching',
       description: 'Integrated with different applications and provide users with quick access.',
-      imgSrc: imgSrc5,
       status: AppStatusEnum.UNINSTALLED,
     },
   ],

@@ -49,7 +49,7 @@ function StoreList({ appList } : StoreListProps) {
   
   return (
     <>
-      {appList.map(({ id, icon, iconColor, name, description, imgSrc, status }) => (
+      {appList.map(({ id, icon, iconColor, name, description, status }) => (
         <Flex key={id} alignY="center" height="60px">
           <Flex className="store-item-left" alignY="center" paddingLeft="6" height="100%">
             <RIcon icon={icon} iconColor={iconColor} size="medium" />
@@ -58,10 +58,6 @@ function StoreList({ appList } : StoreListProps) {
               <Text color="#202830">{name}</Text>
               <Text color="#6F767D" size="small" truncated title={description}>{description}</Text>
             </Box>
-
-            <Popup className="store-item-left-popup" visible>
-              <Image style={{ cursor: 'auto' }} src={imgSrc} alt={name} height="100%" />
-            </Popup>
           </Flex>
 
           <Flex

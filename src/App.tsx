@@ -44,7 +44,7 @@ function App() {
         <PortalProvider>
           <NavBar forwardedRef={navBarRef} />
 
-          {curPage === 'applets-modal' && <AppletsModal forwardedRef={appletsModalRef} />}
+          {curPage === 'toolbox-modal' && <AppletsModal forwardedRef={appletsModalRef} />}
 
           {curPage === 'store-modal' && <StoreModal forwardedRef={storeModalRef} />}
         </PortalProvider>

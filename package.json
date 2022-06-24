@@ -1,5 +1,5 @@
 {
-  "name": "hackthon_2022_applets",
+  "name": "hackthon_2022_toolbox",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
     "eject": "craco eject"
   },
   "dependencies": {
+    "@cobalt-marketplace/react-form-check": "^1.1.0",
+    "@cobalt-marketplace/react-form-control": "^1.0.5",
     "@cobalt-marketplace/react-tooltip": "^1.1.0",
     "@cobalt/react-avatar": "^1.2.12",
     "@cobalt/react-box": "^1.2.8",

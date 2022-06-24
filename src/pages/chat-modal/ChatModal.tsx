@@ -11,7 +11,7 @@ import ChatList from "./ChatList";
 import ChatRoom from "./ChatRoom";
 
 import { useAppDispatch } from "@/app/hooks";
-import { AppType, changeCurPage } from "@/slices/global/globalSlice";
+import { AppIdEnum, AppType, changeCurPage } from "@/slices/global/globalSlice";
 
 export type AgentType = {
   id: string;
@@ -120,7 +120,7 @@ function ChatModal({ app }: ChatModalProps) {
   const handleBack = () => {
     setCurPage('chatList');
   };
-  
+
   return (
     <Popup
       style={{
@@ -129,7 +129,7 @@ function ChatModal({ app }: ChatModalProps) {
         right: 0,
         width: '344px',
       }}
-      visible={app.id === '1'}
+      visible={app.id === AppIdEnum.WHISPER}
     >
       <Flex style={{ position: 'relative' }} direction="column" alignX="stretch" height="572px" scrollable>
         {/* Close button */}

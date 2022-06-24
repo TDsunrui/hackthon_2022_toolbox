@@ -16,7 +16,7 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { AppType, changeCurPage, useInstalledAppList } from "@/slices/global/globalSlice";
 import { useCallback, useMemo, useState } from "react";
 
-type TabKey = 'store' | 'myApplets';
+type TabKey = 'store' | 'myToolbox';
 
 interface StoreModalProps {
   forwardedRef: (n: HTMLDivElement) => void;
@@ -66,7 +66,7 @@ function StoreModal({ forwardedRef }: StoreModalProps) {
             shape="compact"
             variation="transparent"
             size="small"
-            onClick={() => dispatch(changeCurPage('applets-modal'))}
+            onClick={() => dispatch(changeCurPage('toolbox-modal'))}
           >
             <Icon name="chevron_left" size="small" />
           </Button>
@@ -75,11 +75,11 @@ function StoreModal({ forwardedRef }: StoreModalProps) {
         {/* Title and Description */}
         <Box>
           <Heading level="4" color="#202830">
-            Applets Management
+            Toolbox Management
           </Heading>
 
           <Text style={{ paddingTop: '4px' }} color="#6F767D">
-            Add and manage applets
+            Add and manage toolbox
           </Text>
         </Box>
       </Flex>
@@ -95,11 +95,11 @@ function StoreModal({ forwardedRef }: StoreModalProps) {
         </Tab>
 
         <Tab
-          active={curTab === 'myApplets'}
+          active={curTab === 'myToolbox'}
           size="small"
-          onClick={() => handleChangeTab('myApplets')}
+          onClick={() => handleChangeTab('myToolbox')}
         >
-          My Applets
+          My Toolbox
         </Tab>
       </Flex>
 
@@ -120,7 +120,7 @@ function StoreModal({ forwardedRef }: StoreModalProps) {
         <Input
           style={{ paddingLeft: '40px' }}
           value={searchValue}
-          placeholder="Search for applets"
+          placeholder="Search for toolbox"
           onChange={(e) => setSearchValue(e.target.value)}
         />
       </Box>
